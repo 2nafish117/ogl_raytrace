@@ -34,8 +34,8 @@ int main(void)
 {
 	// Global Data
 	GLFWwindow* window;
-	int windowWidth = 500;
-	int windowHeight = 500;
+	int windowWidth  = 1024;
+	int windowHeight = 1024;
 	const char* windowText = "Raytrace";
 
 	// Startup
@@ -97,6 +97,7 @@ int main(void)
 		ShaderProgram shader;
 		shader.load("res/shaders/raytrace.vert", "res/shaders/raytrace.frag");
 		shader.bind();
+		// only set initially, not updated on window resize
 		shader.set1f("uWindowWidth", (f32) windowWidth);
 		shader.set1f("uWindowHeight", (f32) windowHeight);
 
